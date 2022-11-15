@@ -1,0 +1,72 @@
+#RaceContainer {
+  margin-left: 8px;
+  margin-top: 10px;
+  color: #ffff;
+  border-style: solid;
+  border-color: #ffff;
+  border-radius: 10px;
+  width: 40rem;
+  height: fit-content;
+}
+
+#RaceName {
+  margin-left: 8px;
+  margin-right: 0px;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#RaceContainer:hover {
+  cursor: pointer;
+}
+
+#RaceDescription {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#SelectRaceButton {
+  text-align: center;
+  margin-top: 10px;
+  color: #ffff;
+  border-style: solid;
+  border-color: #ffff;
+  border-radius: 10px;
+  width: 3rem;
+  height: fit-content;
+}
+
+#SelectRaceButton:hover {
+  opacity: 0.4;
+}
+
+#tableContainer {
+  padding-left: 40px;
+  width: fit-content;
+}
+
+.visible {
+  display: block;
+  padding: 10px
+}
+
+li {
+  margin-top: 5px;
+}
+
+th {
+  text-align: left;
+  padding-right: 50px;
+  border-bottom: 0.01rem solid #ff9900;
+}
+
+td {
+  text-align: left;
+  padding-right: 50px;
+  border-bottom: 0.01rem solid #ff9900;
+}
+
+.hidden {
+  display: none;
+}
