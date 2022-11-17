@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Class.css';
 
-function Class({ characterClass, character, setCharacter }) {
+function Class({ characterClass, character, setClassName, setSubClassName }) {
 
     const [visibile, setVisible] = useState(false)
     const visibility = visibile ? "visible" : "hidden"
@@ -131,20 +131,11 @@ function Class({ characterClass, character, setCharacter }) {
                     <div id="RaceDescription">
                         <div id="SelectRaceButton" onClick={(e) => {
                             e.stopPropagation()
-                            setCharacter({
-                                ...character,
-                                characterClass: characterClass
-                            })
+                            character.characterClass = characterClass
+                            setClassName(characterClass.name)
                             if (characterClass.subclassLevel === 1) {
-                                console.log(characterClass)
-                                setCharacter({
-                                    ...character,
-                                    characterClass: characterClass,
-                                    characterSubclass: {
-                                        ...characterClass.characterSubclass,
-                                        name: "Not Yet Unlocked"
-                                    }
-                                })
+                                character.subClass.name = "Not Yet Unlocked"
+                                setSubClassName("Not Yet Unlocked")
                             }
                         }}>
                             Select

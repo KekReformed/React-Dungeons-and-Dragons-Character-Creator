@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import './abilityScores.css';
 
-function AbilityScore({ character, setCharacter, abilityScore, abilityScoreName, currentPage, setCurrentPage}) {
+function AbilityScore({ character, abilityScore, abilityScores, setAbilityScores, abilityScoreName }) {
 
     function updateCharacter(event) {
         const value = event.target.value
 
         character.abilityScores[abilityScore] = value
-        setCharacter(character)
-        setCurrentPage(currentPage)
+        console.log(abilityScore,value)
+        abilityScores[abilityScore] = value
+        setAbilityScores({ abilityScores })
     }
 
     useEffect(() => {

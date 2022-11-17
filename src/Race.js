@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Race.css';
 
-function Race({ race, character, setCharacter }) {
+function Race({ race, character, setRaceName }) {
 
     const [visibile, setVisible] = useState(false)
     const visibility = visibile ? "visible" : "hidden"
@@ -57,14 +57,9 @@ function Race({ race, character, setCharacter }) {
                 </div>
                 <div id="SelectRaceButton" onClick={(e) => {
                     e.stopPropagation()
-                    setCharacter({
-                        ...character,
-                        race: race,
-                        subRace: {
-                            ...character.subRace,
-                            name: subRace.name
-                        }
-                    })
+                    character.race = race
+                    character.subRace.name = subRace.name
+                    setRaceName(subRace.name)
                 }}>
                     Select
                 </div>
