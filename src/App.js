@@ -4,39 +4,27 @@ import Race from './Race';
 import Class from './Class';
 import AbilityScoresMenu from './abilityScoresMenu'
 
-function App() {
-
-  class Character {
-    constructor() {
-      this.name = "???"
-      this.race = ""
-      this.subRace = { name: "???" }
-      this.characterClass = { name: "???" }
-      this.characterSubClass = { name: "???" }
-      this.abilityScores = {
-        "str": "???",
-        "dex": "???",
-        "con": "???",
-        "int": "???",
-        "wis": "???",
-        "char": "???"
-      }
+class Character {
+  constructor() {
+    this.name = "???"
+    this.race = ""
+    this.subRace = { name: "???" }
+    this.characterClass = { name: "???" }
+    this.characterSubClass = { name: "???" }
+    this.abilityScores = {
+      "str": "???",
+      "dex": "???",
+      "con": "???",
+      "int": "???",
+      "wis": "???",
+      "char": "???"
     }
   }
+}
+
+function App() {
 
   const [character, setCharacter] = useState(new Character())
-
-  useEffect(() => {
-    document.getElementById("raceName").innerHTML = character.subRace.name
-    document.getElementById("className").innerHTML = character.characterClass.name
-    document.getElementById("subClassName").innerHTML = character.characterSubClass.name
-    document.getElementById("strScore").innerHTML = `Strength: ${character.abilityScores.str}` 
-    document.getElementById("dexScore").innerHTML = "Dexterity: " + character.abilityScores.dex
-    document.getElementById("conScore").innerHTML = "Constitution: " + character.abilityScores.con
-    document.getElementById("intScore").innerHTML = "Intelligence: " + character.abilityScores.int
-    document.getElementById("wisScore").innerHTML = "Wisdom: " + character.abilityScores.wis
-    document.getElementById("charScore").innerHTML = "Charisma: " + character.abilityScores.char
-  })
 
   let race = {
     name: "Human",
@@ -99,6 +87,7 @@ function App() {
       char: 13
     },
     spellcaster: true,
+    subclassLevel: 1,
     features: {
       "Hit Dice": "1d6 per level",
       "HP at 1st Level": "6 + Constitution modifier",
@@ -148,7 +137,7 @@ function App() {
 
   let raceList = [<Race race={race} character={character} setCharacter={setCharacter} />, <Race race={race} character={character} setCharacter={setCharacter} />]
   let classList = [<Class characterClass={characterClass} character={character} setCharacter={setCharacter}></Class>]
-  let abilityScores = <AbilityScoresMenu character={character} setCharacter={setCharacter}></AbilityScoresMenu>
+  let abilityScores = <AbilityScoresMenu character={character} setCharacter={setCharacter} currentPage={currentPage} setCurrentPage={setCurrentPage}> </AbilityScoresMenu>
   let [currentPage, setCurrentPage] = useState(raceList)
 
   return (
@@ -174,12 +163,12 @@ function App() {
             <div id="subClassName" className='Attribute'></div>
           </div>
           <div className="subTitle">Ability Scores</div>
-          <div className="abilityScores" id="strScore">Intelligence: </div>
-          <div className="abilityScores" id="dexScore">Intelligence: </div>
-          <div className="abilityScores" id="conScore">Intelligence: </div>
-          <div className="abilityScores" id="intScore">Intelligence: </div>
-          <div className="abilityScores" id="wisScore">Intelligence: </div>
-          <div className="abilityScores" id="charScore">Intelligence: </div>
+          <div className="abilityScores" id="strScore">Strength: {character.abilityScores.str}</div>
+          <div className="abilityScores" id="dexScore">Dexterity: {character.abilityScores.str}</div>
+          <div className="abilityScores" id="conScore">Constitution: {character.abilityScores.str}</div>
+          <div className="abilityScores" id="intScore">Intelligence: {character.abilityScores.str}</div>
+          <div className="abilityScores" id="wisScore">Wisdom: {character.abilityScores.str}</div>
+          <div className="abilityScores" id="charScore">Charisma: {character.abilityScores.str}</div>
         </div>
       </div>
       <div id="Menu">

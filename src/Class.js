@@ -129,15 +129,26 @@ function Class({ characterClass, character, setCharacter }) {
                     </ul>
                     {majorFeatureFormating(characterClass.majorFeatures)}
                     <div id="RaceDescription">
-                    <div id="SelectRaceButton" onClick={(e) => {
-                    e.stopPropagation()
-                    setCharacter({
-                        ...character,
-                        characterClass: characterClass
-                    })
-                }}>
-                    Select
-                </div>
+                        <div id="SelectRaceButton" onClick={(e) => {
+                            e.stopPropagation()
+                            setCharacter({
+                                ...character,
+                                characterClass: characterClass
+                            })
+                            if (characterClass.subclassLevel === 1) {
+                                console.log(characterClass)
+                                setCharacter({
+                                    ...character,
+                                    characterClass: characterClass,
+                                    characterSubclass: {
+                                        ...characterClass.characterSubclass,
+                                        name: "Not Yet Unlocked"
+                                    }
+                                })
+                            }
+                        }}>
+                            Select
+                        </div>
                     </div>
                 </div>
                 {subRaces}

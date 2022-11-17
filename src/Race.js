@@ -60,7 +60,10 @@ function Race({ race, character, setCharacter }) {
                     setCharacter({
                         ...character,
                         race: race,
-                        subRace: { name: subRace.name }
+                        subRace: {
+                            ...character.subRace,
+                            name: subRace.name
+                        }
                     })
                 }}>
                     Select

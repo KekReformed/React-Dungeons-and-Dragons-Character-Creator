@@ -1,7 +1,7 @@
 import AbilityScore from './abilityScores';
 //import './abilityScores.css';
 
-function AbilityScoresMenu({ character, setCharacter }) {
+function AbilityScoresMenu({ character, setCharacter, currentPage, setCurrentPage}) {
 
     function roll() {
         let numbers = [Math.ceil(Math.random() * 6), Math.ceil(Math.random() * 6), Math.ceil(Math.random() * 6), Math.ceil(Math.random() * 6)]
@@ -21,7 +21,7 @@ function AbilityScoresMenu({ character, setCharacter }) {
 
     return (
         <div id="Menu">
-            <AbilityScore character={character} setCharacter={setCharacter} abilityScore="str" abilityScoreName="Strength"></AbilityScore>
+            <AbilityScore character={character} setCharacter={setCharacter} abilityScore="str" abilityScoreName="Strength" currentPage={currentPage} setCurrentPage={setCurrentPage}></AbilityScore>
             <AbilityScore character={character} setCharacter={setCharacter} abilityScore="dex" abilityScoreName="Dexterity"></AbilityScore>
             <AbilityScore character={character} setCharacter={setCharacter} abilityScore="con" abilityScoreName="Constituion"></AbilityScore>
             <AbilityScore character={character} setCharacter={setCharacter} abilityScore="int" abilityScoreName="Intelligence"></AbilityScore>
