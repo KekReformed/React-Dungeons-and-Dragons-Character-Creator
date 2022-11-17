@@ -1,20 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import './abilityScores.css';
 
-function AbilityScore({ character, abilityScore, abilityScores, setAbilityScores, abilityScoreName }) {
+function AbilityScore({ character, abilityScore, setAbilityScores, abilityScoreName }) {
 
     function updateCharacter(event) {
         const value = event.target.value
 
         character.abilityScores[abilityScore] = value
-        console.log(abilityScore,value)
-        abilityScores[abilityScore] = value
-        setAbilityScores({ abilityScores })
+        setAbilityScores(character.abilityScores)
     }
-
-    useEffect(() => {
-        console.log("Ding")
-    })
 
     return (
         <div id="ScoreContainer">

@@ -1,7 +1,7 @@
 import AbilityScore from './abilityScores';
 //import './abilityScores.css';
 
-function AbilityScoresMenu({ character, abilityScores, setAbilityScores }) {
+function AbilityScoresMenu({ character, setAbilityScores }) {
 
     function roll() {
         let numbers = [Math.ceil(Math.random() * 6), Math.ceil(Math.random() * 6), Math.ceil(Math.random() * 6), Math.ceil(Math.random() * 6)]
@@ -21,12 +21,12 @@ function AbilityScoresMenu({ character, abilityScores, setAbilityScores }) {
 
     return (
         <div id="Menu">
-            <AbilityScore character={character} abilityScore="str" abilityScores={abilityScores} setAbilityScores={setAbilityScores} abilityScoreName="Strength"></AbilityScore>
-            <AbilityScore character={character} abilityScore="dex" abilityScores={abilityScores} setAbilityScores={setAbilityScores} abilityScoreName="Dexterity"></AbilityScore>
-            <AbilityScore character={character} abilityScore="con" abilityScores={abilityScores} setAbilityScores={setAbilityScores} abilityScoreName="Constitution"></AbilityScore>
-            <AbilityScore character={character} abilityScore="int" abilityScores={abilityScores} setAbilityScores={setAbilityScores} abilityScoreName="Intelligence"></AbilityScore>
-            <AbilityScore character={character} abilityScore="wis" abilityScores={abilityScores} setAbilityScores={setAbilityScores} abilityScoreName="Wisdom"></AbilityScore>
-            <AbilityScore character={character} abilityScore="char" abilityScores={abilityScores} setAbilityScores={setAbilityScores} abilityScoreName="Charisma"></AbilityScore>
+            <AbilityScore character={character} abilityScore="str" setAbilityScores={setAbilityScores} abilityScoreName="Strength"></AbilityScore>
+            <AbilityScore character={character} abilityScore="dex" setAbilityScores={setAbilityScores} abilityScoreName="Dexterity"></AbilityScore>
+            <AbilityScore character={character} abilityScore="con" setAbilityScores={setAbilityScores} abilityScoreName="Constitution"></AbilityScore>
+            <AbilityScore character={character} abilityScore="int" setAbilityScores={setAbilityScores} abilityScoreName="Intelligence"></AbilityScore>
+            <AbilityScore character={character} abilityScore="wis" setAbilityScores={setAbilityScores} abilityScoreName="Wisdom"></AbilityScore>
+            <AbilityScore character={character} abilityScore="char" setAbilityScores={setAbilityScores} abilityScoreName="Charisma"></AbilityScore>
         </div>
     );
 }

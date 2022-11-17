@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Race from './Race';
 import Class from './Class';
@@ -12,12 +12,12 @@ class Character {
     this.characterClass = { name: "???" }
     this.characterSubClass = { name: "???" }
     this.abilityScores = {
-      "str": "???",
-      "dex": "???",
-      "con": "???",
-      "int": "???",
-      "wis": "???",
-      "char": "???"
+      "str": 0,
+      "dex": 0,
+      "con": 0,
+      "int": 0,
+      "wis": 0,
+      "char": 0
     }
   }
 }
@@ -138,19 +138,13 @@ function App() {
   let [raceName, setRaceName] = useState("???")
   let [className, setClassName] = useState("???")
   let [subClassName, setSubClassName] = useState("???")
-  let [abilityScores, setAbilityScores] = useState({
-    str:0,
-    dex:"???",
-    con:"???",
-    int:"???",
-    wis:"???",
-    char:"???"
-  })
+  let [abilityScores, setAbilityScores] = useState(character.abilityScores)
 
   let raceList = [<Race race={race} character={character} setRaceName={setRaceName} />, <Race race={race} character={character} setRaceName={setRaceName} />]
   let classList = [<Class characterClass={characterClass} character={character} setClassName={setClassName} setSubClassName={setSubClassName}></Class>]
-  let abilityScoresPage = <AbilityScoresMenu character={character} abilityScores={abilityScores} setAbilityScores={setAbilityScores}> </AbilityScoresMenu>
+  let abilityScoresPage = <AbilityScoresMenu character={character} setAbilityScores={setAbilityScores}> </AbilityScoresMenu>
   let [currentPage, setCurrentPage] = useState(raceList)
+
 
   return (
     <div className="App">

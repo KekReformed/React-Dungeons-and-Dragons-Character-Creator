@@ -67,6 +67,7 @@ function Race({ race, character, setRaceName }) {
         </div>)
     }
 
+    
     function toggleVisibility() {
         setVisible(current => !current)
     }
